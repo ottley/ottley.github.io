@@ -1,0 +1,11 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+#surf {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

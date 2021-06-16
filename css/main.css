@@ -29,7 +29,3 @@ body{
 }
 
 *{ border: 1px solid red; }
-
-.hero.is-fullheight.has-fixed-navbar {
-    min-height: calc(100vh - #{$navbar-height});
-}

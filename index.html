@@ -8,10 +8,46 @@
         <link rel="stylesheet" href="css/bulma.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
 	    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+	    
+	    
+	    <script src="vunit.js"></script>
+        <script>
+          new vUnit({
+            CSSMap: {
+              // The selector (VUnit will create rules ranging from .selector1 to .selector100)
+              '.vh_height': {
+                // The CSS property (any CSS property that accepts px as units)
+                property: 'height',
+                // What to base the value on (vh, vw, vmin or vmax)
+                reference: 'vh'
+              },
+              '.vw': {
+					property: 'width',
+					reference: 'vw'
+				},
+              // Wanted to have a font-size based on the viewport width? You got it.
+              '.vw_font-size': {
+                property: 'font-size',
+                reference: 'vw'
+              },
+              // vmin and vmax can be used as well.
+              '.vmin_margin-top': {
+                property: 'margin-top',
+                reference: 'vmin'
+              }
+            },
+            onResize: function() {
+              console.log('A screen resize just happened, yo.');
+            }
+          }).init(); // call the public init() method
+        </script>
+	    
+	    
+	    
     </head>
     <body>
         
-        <section class="hero is-fullheight">
+        <section class="hero is-fullheight vh_height100">
   <div class="hero-body" style="background-image:url('images/space_port2.jpg'); clip-path:polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0% 0%); background-size:cover; background-position: center; background-color:white;">
     <div class="container has-text-centered">
       <p class="title is-size-1" style="color:white; font-family: 'Playfair Display'; font-weight:700;">

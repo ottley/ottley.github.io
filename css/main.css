@@ -4,19 +4,9 @@ body{
 }
 
 #surf {
-  width: 100%;
-  height: 100%;
+  width: 1000vw;
+  height: 100vh;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-
-.container2 {
-  position: relative;
-  height:25vh;
 }
 
 .text-block {
@@ -28,4 +18,32 @@ body{
   text-align: center;
 }
 
-/**  *{ border: 1px solid red; }*/
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 16px;
+  min-width: 100px;
+  padding:0;
+  overflow: auto;
+  background-color:transparent;
+  z-index: 1;
+  
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 1px 1px;
+  text-decoration: none;
+  display: block;
+  text-align:center;
+}
+
+.show {display: block; }

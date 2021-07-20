@@ -47,19 +47,73 @@
     </head>
     <body>
         
-        <section class="hero is-fullheight vh_height100">
-  <div class="hero-body" style="background-image:url('images/space_port2.jpg'); clip-path:polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0% 0%); background-size:cover; background-position: center; background-color:white;">
-    <div class="container has-text-centered">
-      <p class="title is-size-1" style="color:white; font-family: 'Playfair Display'; font-weight:700;">
-        Louis&nbsp;Ottley
-      </p>
-      <p class="subtitle is-size-3" style="font-family: 'Playfair Display'; color:white; font-weight:400;">
-        Web&nbsp;Developer
-      </p>
-    </div>
+                <!--<img src="images/space_port_rtu.jpg" id="surf" style="background-size:cover; background-position: center;">-->
+        <div style="width:100%; position: relative; background-image:url('images/space_port2.jpg'); background-size:cover; background-position: center; clip-path:polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0% 0%);" class="vh_height100">
+      
+      
+      
+      
+      
+      <div class="dropdown" style="position: absolute;
+  top: 8px;
+  right: 16px;">
+  <div onselectstart="return false">
+  <h1 style="position: absolute;
+  top: 8px;
+  right: 16px; color:white; font-size:3rem; cursor: pointer;" onclick="myFunction()" class="dropbtn2" >&#8801;</h1>
+  
   </div>
-</section>
+  <div id="myDropdown" class="dropdown-content" style="height: 82px; ">
+      <br>
+    <a href="">Contact me</a>
+  </div>
+</div>
 
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn2')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+  
+
+
+
+<!--
+<h1 style="position: absolute;
+  top: 8px;
+  right: 16px; color:white; font-size:3rem;">&#8801;</h1>-->
+
+
+
+            <div style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); text-align:center; ">
+                
+                <h1>
+                    <div style="font-family: 'Playfair Display'; color:white; font-size:3rem; font-weight:700;">
+                        Louis&nbsp;Ottley<br>
+                    </div>
+                    <div style="font-family: 'Playfair Display'; color:white; font-size:2rem; font-weight:400;">
+                        Web&nbsp;Developer
+                    </div>
+                </h1>
+            </div>
+        </div>
 
 
 <div><p>.</p></div>
@@ -68,23 +122,32 @@
 
 <div>
 <section>
-<div style="display:inline; width:40vw; height:30vh; float:left; margin-left:10vw; background-color:red; text-align:center;"><p style="text-align:center;">a</p></div>
-<div style="                width:40vw; height:30vh; float:right; margin-right:10vw; text-align:center; background-color:blue;"><p style="text-align:center;">b</p></div>
+<div style="display:inline; width:40vw; height:30vh; float:left; margin-left:10vw; border:2px solid red; text-align:center; background-image:url('images/space_port2.jpg'); background-size:cover; background-position: center;"><p style="text-align:center;"></p></div>
+<div style="                width:40vw; height:30vh; float:right; margin-right:10vw; text-align:center; border:2px solid red;"><p style="text-align:center;">project description</p></div>
 </section>
 </div>
 <br>
 <div>
 <section>
-<div style="display:inline; margin-top:2vw; width:40vw; height:30vh; float:left; margin-left:10vw; background-color:red; text-align:center;"><p style="text-align:center;">a</p></div>
-<div style="                margin-top:2vw; width:40vw; height:30vh; float:right; margin-right:10vw; text-align:center; background-color:blue;"><p style="text-align:center;">b</p></div>
+<div style="display:inline; margin-top:2vw; width:40vw; height:30vh; float:left; margin-left:10vw; border:2px solid red; text-align:center;"><p style="text-align:center;">project description</p></div>
+<div style="                margin-top:2vw; width:40vw; height:30vh; float:right; margin-right:10vw; text-align:center; border:2px solid red; background-image:url('images/space_port2.jpg'); background-size:cover; background-position: center;"><p style="text-align:center;"></p></div>
+</section>
+</div>
+<div>
+<section>
+<div style="display:inline; margin-top:2vw; width:40vw; height:30vh; float:left; margin-left:10vw; border:2px solid red; text-align:center; background-image:url('images/space_port2.jpg'); background-size:cover; background-position: center;"><p style="text-align:center;"></p></div>
+<div style="                width:40vw; margin-top:2vw; height:30vh; float:right; margin-right:10vw; text-align:center; border:2px solid red;"><p style="text-align:center;">project description</p></div>
 </section>
 </div>
 
 
 <div><p>.</p></div>
+
+
+
 <div>
 <section class="hero is-small">
-  <div class="hero-body" style="display:inline-block; background-image:url('2049.jpg'); clip-path: polygon(100% 100%, 100% 0, 50% 20%, 0 0, 0 100%); background-size:cover; background-color:white;">
+  <div class="hero-body" style="display:inline-block; background-image:url('images/space_port2.jpg'); clip-path: polygon(100% 100%, 100% 0, 50% 20%, 0 0, 0 100%); background-size:cover; filter: grayscale(0.65); background-color:white;">
     <p class="is-size-3 is-size-4-mobile" style="color:white; text-align:center; font-family: 'Playfair Display'; color:white; font-size:1rem; font-weight:400; margin-top:15%">
       Created&nbsp;by&nbsp;Louis&nbsp;Ottley<br>HTML&nbsp;CSS&nbsp;JS<br>2021
     </p>

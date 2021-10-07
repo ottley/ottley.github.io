@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Simon Says Game</title>
+        <link rel="stylesheet" href="bulma.css">
+        <link rel="stylesheet" href="main.css">
+        <script src="boxClick.js"></script>
+        <script src="vunit.js"></script>
+        <script>
+          new vUnit({
+            CSSMap: {
+              // The selector (VUnit will create rules ranging from .selector1 to .selector100)
+              '.vh_height': {
+                // The CSS property (any CSS property that accepts px as units)
+                property: 'height',
+                // What to base the value on (vh, vw, vmin or vmax)
+                reference: 'vh'
+              },
+              '.vw': {
+					property: 'width',
+					reference: 'vw'
+				},
+              // Wanted to have a font-size based on the viewport width? You got it.
+              '.vw_font-size': {
+                property: 'font-size',
+                reference: 'vw'
+              },
+              // vmin and vmax can be used as well.
+              '.vmin_margin-top': {
+                property: 'margin-top',
+                reference: 'vmin'
+              }
+            },
+            onResize: function() {
+              console.log('A screen resize just happened, yo.');
+            }
+          }).init(); // call the public init() method
+        </script>
+    </head>
+    <body>
+      <div class="columns is-multiline is-mobile is-gapless is-marginless">
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r1c1" onclick="red()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r1c2" onclick="blue()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r1c3" onclick="green()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r2c1" onclick="dOrange()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r2c2" onclick="purple()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r2c3" onclick="yellow()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r3c1" onclick="dPink()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r3c2" onclick="teal()"></div>
+        </div>
+        <div class="column is-one-third">
+          <div class="buttonHeight3 vh_height30" id="r3c3" onclick="brown()"></div>
+        </div>
+      </div>
+      <div class="columns is-centered is-marginless is-gapless">
+        <div class="column is-full buttonHeight3 vh_height10" style="text-align: center; background-color: purple;">
+          <button class="button is-success vh_height10 is-rounded" style="width:30vw" onclick="start()">Start Game</button>
+        </div>
+      </div>
+      <div class="overlay" style="display:none;" id="win">
+          <button class="button is-rounded is-danger" style="position: absolute;right: 0;" onclick="winButton()">X</button>
+        <h1 style="text-align: center;color: white;margin-top: 40vh; font-size: 500%;">WIN</h1>
+      </div>
+      <div class="overlay" style="display:none;" id="lost">
+          <button class="button is-rounded is-danger" style="position: absolute;right: 0;" onclick="lostButton()">X</button>
+        <h1 style="text-align: center;color: white;margin-top: 40vh; font-size: 500%;">LOST</h1>
+        
+      </div>
+    </body>
+</html>

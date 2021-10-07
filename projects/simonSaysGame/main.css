@@ -1,0 +1,51 @@
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5); /*dim the background*/
+  }
+
+/*Bulma height*/
+.buttonHeight{
+    height: 30vh;
+}
+.buttonHeight2{
+    height: 10vh;
+}
+
+.columns.is-vcentered {
+    -webkit-box-align: center;
+       -ms-flex-align: center;
+          align-items: center;
+  }
+  
+#r1c1{
+    background: repeating-linear-gradient(-45deg, red, red 5px, DarkGray 5px, DarkGray 10px);
+    }
+#r1c2{
+    background: repeating-linear-gradient(-45deg, blue, blue 5px, DarkGray 5px, DarkGray 10px);
+    }
+#r1c3{
+    background: repeating-linear-gradient(-45deg, green, green 5px, DarkGray 5px, DarkGray 10px);
+}
+#r2c1{
+    background: repeating-linear-gradient(-45deg, DarkOrange, DarkOrange 5px, DarkGray 5px, DarkGray 10px);
+}
+#r2c2{
+    background: repeating-linear-gradient(-45deg, purple, purple 5px, DarkGray 5px, DarkGray 10px);
+}
+#r2c3{
+    background: repeating-linear-gradient(-45deg, yellow, yellow 5px, DarkGray 5px, DarkGray 10px);
+}
+#r3c1{
+    background: repeating-linear-gradient(-45deg, DeepPink, DeepPink 5px, DarkGray 5px, DarkGray 10px);
+}
+#r3c2{
+    background: repeating-linear-gradient(-45deg, teal, teal 5px, DarkGray 5px, DarkGray 10px);
+}
+#r3c3{
+    background: repeating-linear-gradient(-45deg, brown, brown 5px, DarkGray 5px, DarkGray 10px);
+}

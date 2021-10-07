@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Goldman:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/blueprint-css@3.1.1/dist/blueprint.min.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet">
+    <script type="text/javascript" src="productLookup.js"></script>
+    <script type="text/javascript" src="clearButton.js"></script>
+    <title>Dobbies Shop Assistant D.S.A</title>
+  </head>
+  <body>
+    <div bp="grid">
+      <div class="animate-flicker" bp="12" style="height:5px;width:auto;"></div>
+      <div bp="12">
+        <h1 id="rain">
+          <script type="text/javascript" src="rainText.js"></script>
+        </h1>
+      </div>
+      <h2 bp="12" class="toolTitle">Products</h2>
+      <div class="animate-flicker" bp="12" style="height:5px;width:auto;"></div>
+      <div bp="1" DISABLED-id="bar">
+      </div>
+      <div bp="10" id="bar">
+        <input list="products" placeholder="Enter Products Here..." style="width:80%;" id="product" onchange="check()" autocomplete="off">
+        <datalist id="products">
+          <option value="Coffee Logs">
+          <option value="Dobbies Multi-Purpose John Innes Reduced Peat Content, 60L DRP">
+          <option value="Eco Briquettes">
+          <option value="Flaming Firewood">
+          <option value="John Innes Ericaceous Compost 35ltr">
+          <option value="John Innes No.1 Compost 35ltr JI1">
+          <option value="John Innes No.2 Compost 35ltr JI2">
+          <option value="John Innes No.3 Compost 35ltr JI3">
+          <option value="John Innes Seed Sowing Compost 35ltr">
+          <option value="Kiln Dried Logs">
+          <option value="Kindling Box">
+          <option value="Newflame Smokeless Coal">
+        </datalist>
+        <br>
+        <button onclick="productReset()" id="resetButton">RESET</button>
+        <h4 id="selectedItemName">
+        </h4>
+        <p id="navCode" style="font-size: 50%;">
+        </p>
+        <img src="" id="selectedItemImage" height="350px" width="350px" style="display:none;">
+        <img src="" id="selectedItemImageQR" height="350px" width="350px" style="display:none;">
+      </div>
+      <div bp="1">
+      </div>
+      <div class="animate-flicker" bp="12" style="height:5px;width:auto;"></div>
+      <h2 bp="12" id="toolTitle2">Phone Numbers</h2>
+      <div class="animate-flicker" bp="12" style="height:5px;width:auto;"></div>
+      <div bp="4" id="bar">
+        <h3>
+          Dobbies <br> Brighton
+        </h3>
+        <hr/>
+        <h4>
+          <a href="javascript:;" style="text-decoration:none;color:white;">01273 607888</a>
+        </h4>
+      </div>
+      <div bp="4" id="bar">
+        <h3>
+          Pets <br> Corner
+        </h3>
+        <hr/>
+        <h4>
+          <a href="javascript:;" style="text-decoration:none;color:white;">01273 602863</a>
+        </h4>
+      </div>
+      <div bp="4" id="bar">
+        <h3>
+          Customer <br> Services
+        </h3>
+        <hr/>
+        <h4>
+          <a href="javascript:;" style="text-decoration:none;color:white;">0131 561 6406</a>
+        </h4>
+      </div>
+      <div class="animate-flicker" bp="12" style="height:5px;width:auto;"></div>
+      <div bp="12">
+        <h5 id="toolTitle3">
+          Louis Ottley
+        </h5>
+      </div>
+      <div class="animate-flicker" bp="12" style="height:5px;width:auto;"></div>
+    </div>
+  </body>
+</html>

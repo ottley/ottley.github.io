@@ -1,0 +1,90 @@
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+  border: 1px solid purple;
+  background-color: purple;
+   -webkit-animation: flickerAnimation 2s infinite;
+   -moz-animation: flickerAnimation 2s infinite;
+   -o-animation: flickerAnimation 2s infinite;
+    animation: flickerAnimation 2s infinite;
+}
+
+body {
+  background-color: #1e262c;
+  margin: 0;
+  padding: 0;
+  border:10px solid #161c20;
+  font-size: 200%;
+}
+
+#bar {
+  background-color: #36454f;
+  word-wrap: break-word;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border:2px solid purple;
+  border-radius: 15px;
+  box-shadow: 0 0 3pt 2pt blue;
+}
+
+.toolTitle {
+  color: white;
+  text-align: center;
+  font-family: 'Goldman', cursive;
+  margin: 0;
+}
+
+#product{
+  text-align: center;
+  font-family: 'Goldman', cursive;
+  padding:30px;
+  font-size: 150%;
+}
+
+#resetButton {
+  text-align: center;
+  font-family: 'Goldman', cursive;
+  padding: 17px;
+  font-size: 150%;
+}
+
+#toolTitle2 {
+  color: white;
+  text-align: center;
+  font-family: 'Goldman', cursive;
+  margin: 0;
+  padding-top: 50px;
+}
+
+#toolTitle3 {
+  color: white;
+  text-align: center;
+  font-family: 'Goldman', cursive;
+  margin: 0;
+  padding-top: 50px;
+}
+
+#rain{
+  text-align: center;
+  font-family: 'Inknut Antiqua', serif;
+  margin: 0;
+}

@@ -6,189 +6,131 @@
         <title>Louis Ottley</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/bulma.css">
-                <link rel="stylesheet" href="css/close.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-	    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-	    
-	    
-	    <script src="vunit.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <script src="scripts/vunit.js"></script>
         <script>
-          new vUnit({
-            CSSMap: {
-              // The selector (VUnit will create rules ranging from .selector1 to .selector100)
-              '.vh_height': {
-                // The CSS property (any CSS property that accepts px as units)
-                property: 'height',
-                // What to base the value on (vh, vw, vmin or vmax)
-                reference: 'vh'
-              },
-              '.vw': {
-					property: 'width',
-					reference: 'vw'
-				},
-              // Wanted to have a font-size based on the viewport width? You got it.
-              '.vw_font-size': {
-                property: 'font-size',
-                reference: 'vw'
-              },
-              // vmin and vmax can be used as well.
-              '.vmin_margin-top': {
-                property: 'margin-top',
-                reference: 'vmin'
-              }
+            new vUnit({
+              CSSMap: {
+                // The selector (VUnit will create rules ranging from .selector1 to .selector100)
+                '.vh_height': {
+                  // The CSS property (any CSS property that accepts px as units)
+                  property: 'height',
+                  // What to base the value on (vh, vw, vmin or vmax)
+                  reference: 'vh'
+                },
+                '.vw': {
+            property: 'width',
+            reference: 'vw'
             },
-            onResize: function() {
-              console.log('A screen resize just happened, yo.');
-            }
-          }).init(); // call the public init() method
+                // Wanted to have a font-size based on the viewport width? You got it.
+                '.vw_font-size': {
+                  property: 'font-size',
+                  reference: 'vw'
+                },
+                // vmin and vmax can be used as well.
+                '.vmin_margin-top': {
+                  property: 'margin-top',
+                  reference: 'vmin'
+                }
+              },
+              onResize: function() {
+                console.log('A screen resize just happened, yo.');
+              }
+            }).init(); // call the public init() method
         </script>
-	    
-	    
-	    
     </head>
     <body>
-        
-                <!--<img src="images/space_port_rtu.jpg" id="surf" style="background-size:cover; background-position: center;">-->
-                <div class="columns">
-                    <div class="column is-full" style="padding:0;">
-        <div style="width:100%; position: relative; background-image:url('images/space_port2.jpg'); background-size:cover; background-position: center; clip-path: polygon(100% 0, 100% 50%, 100% 80%, 50% 100%, 0 80%, 0% 0%);" class="vh_height100">
-      
-      
-      
-      
-      
-      <div class="dropdown" style="position: absolute;
-  top: 8px;
-  right: 16px; z-index:99;">
-  <div onselectstart="return false">
-  <h1 style="position: absolute;
-  top: 8px;
-  right: 16px; color:white; font-size:3rem; cursor: pointer;" onclick="myFunction()" class="dropbtn2" >&#8801;</h1>
-  
-  </div>
-  <div id="myDropdown" class="dropdown-content" style="height: 160px; ">
-      <br>
-    <a onclick="showEmailPopup()">Contact me</a>
-    <br>
-    <a href="#projects">Projects</a>
-  </div>
-</div>
-<div id="emailPopup" style="display:none; padding-top:2.5%;">
-  <!--<button class="delete" onclick="hideEmail()" style="font-size:2rem;"></button>-->
-  <p style="text-align:center; font-family: 'Playfair Display'; color:white; font-size:1.5rem; font-weight:700;">ottleydev@gmail.com</p>
-  <div><p style="text-align:center;" onclick="hideEmail()"><button class="button is-danger is-rounded">C L O S E</button></p></div>
-  
-</div>
-<script>
-    function hideEmail(){
-    document.getElementById("emailPopup").style.display = "none";
-    }
-    
-    function showEmailPopup(){
-        document.getElementById("emailPopup").style.display = "";
-    }
-</script>
-
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn2')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-
-  
-
-
-
-<!--
-<h1 style="position: absolute;
-  top: 8px;
-  right: 16px; color:white; font-size:3rem;">&#8801;</h1>-->
-
-
-
-            <div style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); text-align:center; ">
-                
-                <h1>
-                    <div style="font-family: 'Playfair Display'; color:white; font-size:3rem; font-weight:700;">
-                        Louis&nbsp;Ottley<br>
+        <div class="columns">
+            <div class="column is-full" style="padding:0;">
+                <div style="width:100%; position: relative; background-image:url('images/space_port.jpg'); background-size:cover; background-position: center; clip-path: polygon(100% 0, 100% 50%, 100% 80%, 50% 100%, 0 80%, 0% 0%);" class="vh_height100">
+                    <div class="dropdown" style="position: absolute; top: 8px; right: 16px; z-index:99;">
+                        <div onselectstart="return false">
+                            <h1 style="position: absolute; top: 8px; right: 16px; color:white; font-size:3rem; cursor: pointer;" onclick="myFunction()" class="dropbtn2" >&#8801;</h1>
+                        </div>
+                        <div id="myDropdown" class="dropdown-content" style="height: 160px; ">
+                            <br>
+                            <a onclick="showEmailPopup()">Contact me</a>
+                            <br>
+                            <a href="#projects">Projects</a>
+                        </div>
                     </div>
-                    <div style="font-family: 'Playfair Display'; color:white; font-size:2rem; font-weight:400;">
-                        Web&nbsp;Developer
+                    <div id="emailPopup" style="display:none; padding-top:2.5%;">
+                        <p style="text-align:center; font-family: 'Playfair Display'; color:white; font-size:1.5rem; font-weight:700;">ottleydev@gmail.com</p>
+                        <div>
+                            <p style="text-align:center;" onclick="hideEmail()"><button class="button is-danger is-rounded">C L O S E</button></p>
+                        </div>
                     </div>
-                </h1>
+                    <script>
+                        function hideEmail(){
+                        document.getElementById("emailPopup").style.display = "none";
+                        }
+                        
+                        function showEmailPopup(){
+                            document.getElementById("emailPopup").style.display = "";
+                        }
+                    </script>
+                    <script>
+                        /* When the user clicks on the button,
+                        toggle between hiding and showing the dropdown content */
+                        function myFunction() {
+                          document.getElementById("myDropdown").classList.toggle("show");
+                        }
+                        
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function(event) {
+                          if (!event.target.matches('.dropbtn2')) {
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                              var openDropdown = dropdowns[i];
+                              if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                              }
+                            }
+                          }
+                        }
+                    </script>
+                    <div style="margin: 0; position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); text-align:center; ">
+                        <h1>
+                            <div style="font-family: 'Playfair Display'; color:white; font-size:3rem; font-weight:700;">Louis&nbsp;Ottley<br></div>
+                            <div style="font-family: 'Playfair Display'; color:white; font-size:2rem; font-weight:400;">Web&nbsp;Developer</div>
+                        </h1>
+                    </div>
+                </div>
             </div>
         </div>
-        
+        <div class="columns" style="margin-top:5%;">
+            <div class="column is-full" style="padding:0;">
+                <div id="projects" style="font-family: 'Playfair Display'; color:white; font-size:3rem; font-weight:700; text-align:center; color:black;">
+                    Projects<br>
+                </div>
+            </div>
         </div>
+        <hr style="width:7.5%; background-color:DarkSlateBlue; margin:auto; margin-bottom:2.5%;">
+        <div class="columns is-vcentered">
+            <div class="column is-6-tablet is-centered" style=" text-align:center; padding-right:0; padding-bottom:0;"><a href="/projects/shop-assistant/index.html"><img src="images/dsa.png" width="651" height="448"></a></div>
+            <div class="column is-6-tablet" style="text-align:center;">
+                <a href="/projects/shop-assistant/index.html"><p><b>Dobbies Shop Assistant</b></p></a>
+                A website I created to replace the functionality of a till book at my current job at the garden center. The website allows for the quick search of products via autocomplete or selection from a dropdown and presents a scan-able QR code that adds the product to the till. This saves time each transaction that was wasted on searching for barcodes by flicking through pages and makes me and my colleagues workday more enjoyable.
+            </div>
         </div>
-
-
-
-<!--<section class="hero is-success is-halfheight">
-  <div class="hero-body" style="padding:0;">
-    <div style="margin:0; margin-left:10%; width:40%; height:calc(width * .4);; background-color:red;">
-        <p>1</p>
-    </div>
-        <div style="margin:0; width:30%; height:30vw; background-color:blue;">
-        <p>2</p>
-    </div>
-  </div>
-</section>-->
-
-<div class="columns" style="margin-top:5%;">
-    <div class="column is-full" style="padding:0;">
-        
-                    <div id="projects" style="font-family: 'Playfair Display'; color:white; font-size:3rem; font-weight:700; text-align:center; color:black;">
-                        Projects<br>
+        <div class="columns is-vcentered">
+            <div class="column is-6-tablet is-centered" style=" text-align:center; padding-right:0; padding-bottom:0;"><a href="projects/simon-says-game"><img src="images/ssg.png" width="651" height="448"></a></div>
+            <div class="column is-6-tablet" style="text-align:center;">
+                <a href="projects/simon-says-game"><p><b>Simon Says Game</b></p></a>
+                A classic game I have recreated that I built to be responsive for different devices. Its simplistic style of play combined with being compatible with different devices has meant that I have played a fair bit of my own creation! Hit start game and a random tile will be flashed, hit that tile and the next round will increment with a new random tile until a mistake leads to a game over!
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-full" style="padding:0;">
+                <section class="hero is-small">
+                    <div class="hero-body" style="display:inline-block; background-image:url('images/space_port.jpg'); clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0 0, 50% 20%); background-size:cover; filter: grayscale(0.65); background-color:white;">
+                        <p class="is-size-3 is-size-4-mobile" style="color:white; text-align:center; font-family: 'Playfair Display'; color:white; font-size:1rem; font-weight:400; margin-top:15%">Created&nbsp;by&nbsp;Louis&nbsp;Ottley<br><img src="images/html_icon.png">&nbsp;<img src="images/css_icon.png">&nbsp;<img src="images/js_icon.png"><br>2021
+                        </p>
                     </div>
-    </div>
-</div>
-<hr style="width:7.5%; background-color:DarkSlateBlue; margin:auto; margin-bottom:2.5%;">
-
-<div class="columns is-vcentered">
-            <div class="column is-6-tablet is-centered" style=" text-align:center; padding-right:0; padding-bottom:0;"><img src="images/dsa.png" width="651" height="448"></div>
-            <div class="column is-6-tablet" style="text-align:center;"><p><b>Dobbies Shop Assistant</b></p>A website I created to replace the functionality of a till book at my current job at the garden center. The website allows for quick search of products via an autocomplete and dropdown select and presents a scan-able QR code which adds the product to the till. Reducing the time per transaction and thereby making me and my colleagues day to day tasks much faster and nicer.</div>
-</div>
-<!--
-<div class="columns is-mobile ">
-            <div class="column is-1"></div>
-            <div class="column is-5" style="background-color:green; text-align:center;">2</div>
-            <div class="column is-5" style="background-color:blue; text-align:center;">2</div>
-            <div class="column is-1"></div>
-</div>-->
-
-
-
-
-<div class="columns">
-    <div class="column is-full" style="padding:0;">
-<section class="hero is-small">
-  <div class="hero-body" style="display:inline-block; background-image:url('images/space_port2.jpg'); clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0 0, 50% 20%); background-size:cover; filter: grayscale(0.65); background-color:white;">
-    <p class="is-size-3 is-size-4-mobile" style="color:white; text-align:center; font-family: 'Playfair Display'; color:white; font-size:1rem; font-weight:400; margin-top:15%">
-      Created&nbsp;by&nbsp;Louis&nbsp;Ottley<br><img src="images/html_icon.png">&nbsp;<img src="images/css_icon.png">&nbsp;<img src="images/js_icon.png"><br>2021
-    </p>
-  </div>
-</section>
-</div>
-</div>
-
-
-
+                </section>
+            </div>
+        </div>
     </body>
 </html>

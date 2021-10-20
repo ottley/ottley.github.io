@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>JSSample</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -14,10 +14,10 @@
         };
       
         $.ajax({
-            url: "https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/{stationId}?" + $.param(params),
+            url: "https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/0082?" + $.param(params),
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", 'e79009b3a5d842cb9ac9bafb20861116');
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "e79009b3a5d842cb9ac9bafb20861116");
             },
             type: "GET",
             // Request body

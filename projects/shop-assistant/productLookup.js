@@ -15,8 +15,7 @@ function check(){
       document.getElementById("navCode").innerHTML = "Item Number: 601684";
       document.getElementById("navCode").style.display = "block";
       ///Image
-      document.getElementById("selectedItemImage").style.display = "inline";
-      document.getElementById("selectedItemImage").src = "productImages/601684-Dobbies-Multi-Purpose-John-Innes-Reduced-Peat-Content-60L.jpeg";
+      document.getElementById("selectedItemImage").style.display = "none";
       ///QR Code
       document.getElementById("selectedItemImageQR").style.display = "inline";
       document.getElementById("selectedItemImageQR").src = "productQR/dobMultiCompRPQR.png";

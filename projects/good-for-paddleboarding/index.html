@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Good For Paddleboarding?</title>
+        <link rel="stylesheet" href="css/bulma.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="sgData.js"></script>
+        <script type="text/javascript" src="dayTimeGuages.js"></script>
+    </head>
+    <body>
+        <section class="hero is-fullheight" style="background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)),
+  url('images/Paddleboarding-Saltdean-2021-85.jpg'); background-size: cover;
+  background-position: center;">
+            <div class="hero-body" style="padding-top:0; padding-bottom: 0;">
+                <div class="container has-text-centered">
+                    
+                    <p class="title" style="color: white; font-family: 'Playfair Display'; font-size:4rem; font-weight:700;">
+                        Good For Paddleboarding?
+                    </p>
+                    
+                    <!--
+                        Buttons to select the day
+                    -->
+                    <button id="today" class="button is-info is-outlined dateTimeButton" style="border-color: white; color: white;" onclick="today()">
+                        Today
+                    </button>
+                    <button id="tomorrow" class="button is-info is-outlined dateTimeButton" style="border-color: white; color: white;" onclick="tomorrow()">
+                        Tomorrow
+                    </button>
+                    <button id="dayAT" class="button is-info is-outlined dateTimeButton" style="border-color: white; color: white;" onclick="dayAT()">
+                    Day After Tomorrow
+                    </button>
+                    <br>
+                        
+                    <!--
+                        Buttons to select the time of day
+                    -->
+                    <button id="sixAM" class="button is-info is-outlined dateTimeButton uiMargin" style="border-color: white; color: white;" onclick="sixAM()">
+                        6AM
+                    </button>
+                    <button id="nineAM" class="button is-info is-outlined dateTimeButton uiMargin" style="border-color: white; color: white;" onclick="nineAM()">
+                        9AM
+                    </button>
+                    <button id="twelvePM" class="button is-info is-outlined dateTimeButton uiMargin" style="border-color: white; color: white;" onclick="twelvePM()">
+                        12PM
+                    </button>
+                    <button id="threePM" class="button is-info is-outlined dateTimeButton uiMargin" style="border-color: white; color: white;" onclick="threePM()"> 
+                        3PM
+                    </button>
+                    <button id="sixPM" class="button is-info is-outlined dateTimeButton uiMargin" style="border-color: white; color: white;" onclick="sixPM()">
+                        6PM
+                    </button>
+                    <br>
+                      
+                    <!--
+                        Gauges Only Visible on Desktop
+                    -->
+                    <!--Temperature-->
+                    <div class="is-hidden-touch gaugeDesktop container uiMargin greyCircle">
+                        <img id="tempLiveDialDesk" src="images/gfBlank.png">
+                        <div id="tempTextDesk" class="centered"><br>Temperature<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Wind Speed-->
+                    <div class="is-hidden-touch gaugeDesktop container uiMargin greyCircle">
+                        <img id="windLiveDialDesk" src="images/gfBlank.png">
+                        <div id="windSpeedTextDesk" class="centered">Wind Speed<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Rain-->
+                    <div class="is-hidden-touch gaugeDesktop container uiMargin greyCircle">
+                        <img id="rainLiveDialDesk" src="images/gfBlank.png">
+                        <div id="rainTextDesk" class="centered"><br>Rain<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Wave Height-->
+                    <div class="is-hidden-touch gaugeDesktop container uiMargin greyCircle">
+                        <img id="waveHLiveDialDesk" src="images/gfBlank.png">
+                        <div id="waveHeightTextDesk" class="centered">Wave Height<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Wave Frequency-->                    
+                    <div class="is-hidden-touch gaugeDesktop container greyCircle">
+                        <img id="waveFLiveDialDesk" src="images/gfBlank.png">
+                        <div id="waveFreqTextDesk" class="centered">Wave Frequency<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Water Currents-->                                                                                                        
+                    <div class="is-hidden-touch gaugeDesktop container greyCircle">
+                        <img id="waterCLiveDialDesk" src="images/gfBlank.png">
+                        <div id="waterCurTextDesk" class="centered">Water Currents<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Visibility-->
+                    <div class="is-hidden-touch gaugeDesktop container greyCircle">
+                        <img id="visLiveDialDesk" src="images/gfBlank.png">
+                        <div id="visTextDesk" class="centered"><br>Visibility<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Tides-->
+                    <div class="is-hidden-touch gaugeDesktop container">
+                        <img id="tideImgDesk" src="images/placeholderTides.png">
+                        <div id="tideTextDesk" class="centered tideText" style="font-size:0.8em;">
+                        </div>
+                    </div>
+                    
+                    <!--
+                        Gauges Only Visible on Mobile
+                    -->
+                    <!--Temperature-->
+                    <div class="is-hidden-desktop gaugeMobile container uiMargin greyCircle">
+                        <img id="tempLiveDialMob" src="images/gfBlank.png">
+                        <div id="tempTextMob" class="centered"><br>Temperature<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Wind Speed-->
+                    <div class="is-hidden-desktop gaugeMobile container uiMargin greyCircle">
+                        <img id="windLiveDialMob" src="images/gfBlank.png">
+                        <div id="windSpeedTextMob" class="centered">Wind Speed<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Rain-->
+                    <div class="is-hidden-desktop gaugeMobile container uiMargin greyCircle">
+                        <img id="rainLiveDialMob" src="images/gfBlank.png">
+                        <div id="rainTextMob" class="centered"><br>Rain<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Wave Height-->
+                    <div class="is-hidden-desktop gaugeMobile container greyCircle">
+                        <img id="waveHLiveDialMob" src="images/gfBlank.png">
+                        <div id="waveHeightTextMob" class="centered">Wave Height<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Wave Frequency-->
+                    <div class="is-hidden-desktop gaugeMobile container greyCircle">
+                        <img id="waveFLiveDialMob" src="images/gfBlank.png">
+                        <div id="waveFreqTextMob" class="centered">Wave Frequency<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>                                                                                
+                    <!--Water Currents-->
+                    <div class="is-hidden-desktop gaugeMobile container greyCircle">
+                        <img id="waterCLiveDialMob" src="images/gfBlank.png">
+                        <div id="waterCurTextMob" class="centered">Water Currents<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Visibility-->
+                    <div class="is-hidden-desktop gaugeMobile container greyCircle" style="margin-left:16.65%;">
+                        <img id="visLiveDialMob" src="images/gfBlank.png">
+                        <div id="visTextMob" class="centered"><br>Visibility<br><img src="images/valuePlaceholderF.png"></div>
+                    </div>
+                    <!--Tides-->
+                    <div class="is-hidden-desktop gaugeMobile container">
+                        <img id="tideImgMob" src="images/placeholderTides.png">
+                        <div id="tideTextMob" class="centered tideText" style="font-size:0.8em;">
+                        </div>
+                    </div>
+                    
+                    <!--
+                        Images not displayed/preloaded 
+                    -->                    
+                    <div style="display:none;">
+                        <img src="images/g1f.png">
+                        <img src="images/g2f.png">
+                        <img src="images/g3f.png">
+                        <img src="images/g4f.png">
+                        <img src="images/g5f.png">
+                            
+                        <img src="images/hlhTides.png">
+                        <img src="images/lhlTides.png">
+                        <img src="images/lhlhTides.png">
+                        <img src="images/hlhlTides.png">
+                    </div>
+
+                </div>
+            </div>
+                <p class="footerText">&copy; Developed by Louis Ottley 2022</p>
+                <p class="footerText">&copy; Background image, Sophie Elena Anderson 2022</p>
+        </section>
+        <script>
+            
+            //Adds date to 'Day After Tomorrow' Button
+            document.getElementById("dayAT").innerHTML = "Day After Tomorrow | " + dayAfterTomorrow.getDate() + "/" + (1 + dayAfterTomorrow.getMonth());
+        </script>
+    </body>
+</html>

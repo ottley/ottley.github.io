@@ -1,0 +1,60 @@
+.gaugeDesktop{
+  float: left;
+  width: 25%;
+}
+
+.gaugeMobile{
+  float: left;
+  width: 33.3%;
+}
+
+.greyCircle{
+  background: url("../images/textBackG.png")center center no-repeat;
+  background-size: contain;
+}
+
+.tideText{
+  background-color: rgba(0, 0, 0, 0.35); 
+}
+
+.dateTimeButton{
+  font-family: 'Playfair Display';
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.uiMargin{
+  margin-top:0.5em;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display';
+  font-weight: 700;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.footerText{
+  text-align: center;
+  font-family: 'Playfair Display';
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+}
+
+.textCentered{
+  text-align: center;
+}
+

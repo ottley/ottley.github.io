@@ -54,30 +54,8 @@ fetch(`https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&st
     }
     catch (err) {
         console.log("API running");
-        
-        // Send tide data from API to db.php
-        for (i = 0; i < jsonData.data.length; i++) {
-            $.ajax({
-                type: "POST",
-                url: 'db.php',
-                data: {
-                    "submit": "yes",
-                    "type": jsonData.data[i].type,
-                    "time": jsonData.data[i].time
-                },
-                success: function(data) {
-                    console.log("Attempt to add data to the db");
-                }
-            });
-        }
     }
-    // Get tide data response from db.php
-    $.ajax({
-        type: "POST",
-        url: 'db.php',
-        data: {
-            "search_location": "Brighton"
-        },
+    
         success: function(data) {
             
             var unsortedArr = [];
@@ -189,71 +167,14 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
                     jsonData2.hours[i].time.includes("T15:00:00+00:00") ||
                     jsonData2.hours[i].time.includes("T18:00:00+00:00"))
             ) {
-                //
-                // Send weather data to db.php
-                //
-                $.ajax({
-                    type: "POST",
-                    url: 'db.php',
-                    data: {
-                        "submitWeather": "yes",
-                        "time": jsonData2.hours[i].time,
-                        "airTemp": jsonData2.hours[i].airTemperature.sg,
-                        "windSpeed": jsonData2.hours[i].windSpeed.sg,
-                        "precipitation": jsonData2.hours[i].precipitation.sg,
-                        "waveHeight": jsonData2.hours[i].waveHeight.sg,
-                        "wavePeriod": jsonData2.hours[i].wavePeriod.sg,
-                        "currentSpeed": jsonData2.hours[i].currentSpeed.sg,
-                        "visibility": jsonData2.hours[i].visibility.sg
-                    },
-                    success: function(data) {
-                        console.log("Attempt to add weather data to the db");
-                    }
-                });
+                
             }
         }
     }
     //
     // Request weather data from db.php
     //
-    $.ajax({
-        type: "POST",
-        url: 'db.php',
-        data: {
-            "search_locationW": "Brighton",
-            "day1": currentDateOnly,
-            "day2": tomorrowDateOnly,
-            "day3": dayATDateOnly,
-            
-        },
-        success: function(data) {
-             
-            unsortedArr2 = JSON.parse(data);
-            
-            // Index found for 6AM-9AM-12PM-3PM-6PM for each day
-            //
-            // Today
-            foundIndex6AMToday = unsortedArr2.lastIndexOf((currentDateOnly+"T06:00:00+00:00"));
-            foundIndex9AMToday = unsortedArr2.lastIndexOf((currentDateOnly+"T09:00:00+00:00"));
-            foundIndex12PMToday = unsortedArr2.lastIndexOf((currentDateOnly+"T12:00:00+00:00"));
-            foundIndex3PMToday = unsortedArr2.lastIndexOf((currentDateOnly+"T15:00:00+00:00"));
-            foundIndex6PMToday = unsortedArr2.lastIndexOf((currentDateOnly+"T18:00:00+00:00"));
-            // Tomorrow
-            foundIndex6AMTomorrow = unsortedArr2.lastIndexOf((tomorrowDateOnly+"T06:00:00+00:00"));
-            foundIndex9AMTomorrow = unsortedArr2.lastIndexOf((tomorrowDateOnly+"T09:00:00+00:00"));
-            foundIndex12PMTomorrow = unsortedArr2.lastIndexOf((tomorrowDateOnly+"T12:00:00+00:00"));
-            foundIndex3PMTomorrow = unsortedArr2.lastIndexOf((tomorrowDateOnly+"T15:00:00+00:00"));
-            foundIndex6PMTomorrow = unsortedArr2.lastIndexOf((tomorrowDateOnly+"T18:00:00+00:00"));
-            // Day After Tomorrow
-            foundIndex6AMDayAT = unsortedArr2.lastIndexOf((dayATDateOnly+"T06:00:00+00:00"));
-            foundIndex9AMDayAT = unsortedArr2.lastIndexOf((dayATDateOnly+"T09:00:00+00:00"));
-            foundIndex12PMDayAT = unsortedArr2.lastIndexOf((dayATDateOnly+"T12:00:00+00:00"));
-            foundIndex3PMDayAT = unsortedArr2.lastIndexOf((dayATDateOnly+"T15:00:00+00:00"));
-            foundIndex6PMDayAT = unsortedArr2.lastIndexOf((dayATDateOnly+"T18:00:00+00:00"));
-            
-        }
     
-});
     
     
     

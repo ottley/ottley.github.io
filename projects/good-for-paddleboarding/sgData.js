@@ -49,6 +49,7 @@ fetch(`https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&st
     try {
         if (jsonData.errors.key == "API quota exceeded") {
             console.log("API quota exceeded");
+            console.log(jsonData);
         }
     }
     catch (err) {

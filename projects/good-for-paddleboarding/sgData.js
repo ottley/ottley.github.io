@@ -1,45 +1,4 @@
-var currentDate = new Date();
-currentDateOnly = currentDate.toISOString().split('T')[0];
 
-var tomorrow = new Date();
-tomorrow.setDate(tomorrow.getDate() + 1);
-tomorrowDateOnly = tomorrow.toISOString().split('T')[0];
-
-var dayAfterTomorrow = new Date();
-dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 2);
-dayATDateOnly = dayAfterTomorrow.toISOString().split('T')[0];
-
-var dayAfterTomorrowFetch = new Date();
-dayAfterTomorrowFetch.setDate(dayAfterTomorrowFetch.getDate() + 3);
-var dayATDateOnlyFetch = dayAfterTomorrowFetch.toISOString().split('T')[0];
-
-var lat = 50.827778;
-var lng = -0.152778;
-
-var tideCaseDay1 = "empty";
-var tideHTMLDay1 = "empty";
-
-var tideCaseDay2 = "empty";
-var tideHTMLDay2 = "empty";
-
-var tideCaseDay3 = "empty";
-var tideHTMLDay3 = "empty";
-
-var foundIndex6AMToday;
-var foundIndex9AMToday;
-var foundIndex12PMToday;
-var foundIndex3PMToday;
-var foundIndex6PMToday;
-var foundIndex6AMTomorrow;
-var foundIndex9AMTomorrow;
-var foundIndex12PMTomorrow;
-var foundIndex3PMTomorrow;
-var foundIndex6PMTomorrow;
-var foundIndex6AMDayAT;
-var foundIndex9AMDayAT;
-var foundIndex12PMDayAT; 
-var foundIndex3PMDayAT;
-var foundIndex6PMDayAT;
 
 fetch(`https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${lng}&start=` + currentDateOnly + `&end=` + dayATDateOnlyFetch, {
     headers: {

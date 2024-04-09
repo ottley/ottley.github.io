@@ -26,29 +26,38 @@
 
         /* Add more styles as needed */
     </style>
+    <!-- Add vUnit.js to the head if you want to avoid FOUC -->
+  <script src="path/to/vunit.js"></script>
+
+  <!-- Instantiate vUnit.js passing a CSSMap with properties you want to play with -->
+  <script>
+    new vUnit({
+      CSSMap: {
+        // The selector (vUnit will create rules ranging from .selector1 to .selector100)
+        '.vh_height': {
+          // The CSS property (any CSS property that accepts px as units)
+          property: 'height',
+          // What to base the value on (vh, vw, vmin or vmax)
+          reference: 'vh'
+        },
+        // Wanted to have a font-size based on the viewport width? You got it.
+        '.vw_font-size': {
+          property: 'font-size',
+          reference: 'vw'
+        },
+        // vmin and vmax can be used as well.
+        '.vmin_margin-top': {
+          property: 'margin-top',
+          reference: 'vmin'
+        }
+      },
+      onResize: function() {
+        console.log('A screen resize just happened, yo.');
+      }
+    }).init(); // call the public init() method
+  </script>
 </head>
 <body>
-    <header>
-        <h1>Accessible Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Welcome to Our Website</h2>
-        <p>This is a sample website designed with accessibility in mind. It follows best practices to ensure that all users, including those with disabilities, can access and use its content.</p>
-
-        <!-- Your website content goes here -->
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Accessible Website. All rights reserved.</p>
-    </footer>
+    <div class="vh_height50 vw_width50" style="background-color: aquamarine;"><!-- This div height is 50% of the viewport height. --></div>
 </body>
 </html>

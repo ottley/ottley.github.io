@@ -4,60 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessible Website Boilerplate</title>
-    <style>
-        /* Add your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        header, footer {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        main {
-            padding: 1rem;
-        }
-
-        /* Add more styles as needed */
-    </style>
+    <link rel="stylesheet" href="bulma.min.css">
     <!-- Add vUnit.js to the head if you want to avoid FOUC -->
-  <script src="vunit.js"></script>
-
-  <!-- Instantiate vUnit.js passing a CSSMap with properties you want to play with -->
-  <script>
-    new vUnit({
-      CSSMap: {
-        // The selector (vUnit will create rules ranging from .selector1 to .selector100)
-        '.vh_height': {
-          // The CSS property (any CSS property that accepts px as units)
-          property: 'height',
-          // What to base the value on (vh, vw, vmin or vmax)
-          reference: 'vh'
-        },
-        // Wanted to have a font-size based on the viewport width? You got it.
-        '.vw_font-size': {
-          property: 'font-size',
-          reference: 'vw'
-        },
-        // vmin and vmax can be used as well.
-        '.vmin_margin-top': {
-          property: 'margin-top',
-          reference: 'vmin'
-        }
-      },
-      onResize: function() {
-        console.log('A screen resize just happened, yo.');
-      }
-    }).init(); // call the public init() method
-  </script>
+    <script src="vunit.js"></script>
+    <!-- Instantiate vUnit.js passing a CSSMap with properties you want to play with -->
+    <script src="start-vUnit.js"></script>
 </head>
 <body>
-    <div class="vh_height50 vw_width50" style="background-color: aquamarine;"><!-- This div height is 50% of the viewport height. --></div>
+    <div class="columns is-multiline is-mobile is-gapless is-marginless">
+      <div class="is-4 vh_33" style="background-color:blue"></div>
+      <div class="is-4 vh_33" style="background-color:purple"></div>
+      <div class="is-4 vh_33" style="background-color:blue"></div>
+      <div class="is-4 vh_33" style="background-color:red"></div>
+      <div class="is-4 vh_33" style="background-color:blue"></div>
+      <div class="is-4 vh_33" style="background-color:yellow"></div>
+      <div class="is-4 vh_33" style="background-color:green"></div>
+      <div class="is-4 vh_33" style="background-color:orange"></div>
+      <div class="is-4 vh_33" style="background-color:blue"></div>
+    </div>
 </body>
 </html>

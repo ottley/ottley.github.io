@@ -10,22 +10,30 @@
     
     <!-- Normalize CSS for better cross-browser consistency -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styling/skeleton.css">
     <script src="scripts/vunit.js"></script>
     <script src="scripts/startVunit.js"></script>
 </head>
 
 <body>
-    <div class="vh_height30" style="width: 33%; background-color: red;"></div>
-    <div class="vh_height30" style="width: 33%;"></div>
-    <div class="vh_height30" style="width: 33%;"></div>
+    <div class="row">
+        <div class="four columns vh_height30" style="background-color: red;">1</div>
+        <div class="four columns vh_height30" style="background-color: green;">2</div>
+        <div class="four columns vh_height30" style="background-color: blue;">3</div>
+      </div>
 
-    <div class="vh_height30" style="width: 33%;"></div>
-    <div class="vh_height30" style="width: 33%; background-color: red;"></div>
-    <div class="vh_height30" style="width: 33%;"></div>
+      <div class="row">
+        <div class="four columns vh_height30" style="background-color: blue;">4</div>
+        <div class="four columns vh_height30" style="background-color: red;">5</div>
+        <div class="four columns vh_height30" style="background-color: green;">6</div>
+      </div>
 
-    <div class="vh_height30" style="width: 33%;"></div>
-    <div class="vh_height30" style="width: 33%;"></div>
-    <div class="vh_height30" style="width: 33%; background-color: red;"></div>
+      <div class="row">
+        <div class="four columns vh_height30" style="background-color: green;">7</div>
+        <div class="four columns vh_height30" style="background-color: blue;">8</div>
+        <div class="four columns vh_height30" style="background-color: red;">9</div>
+      </div>
+
 </body>
 
 </html>

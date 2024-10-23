@@ -10,13 +10,14 @@
     
     <!-- Normalize CSS for better cross-browser consistency -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="styling/skeleton.css">
+    <!--<link rel="stylesheet" href="styling/skeleton.css">-->
+    <link rel="stylesheet" href="styling/bulma.css">
     <script src="scripts/vunit.js"></script>
     <script src="scripts/startVunit.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <!--<div class="container">
         <div class="row">
             <div class="one-third column vh_height30" style="background-color: red;">1</div>
             <div class="one-third column vh_height30" style="background-color: green;">2</div>
@@ -34,7 +35,28 @@
             <div class="one-third column vh_height30" style="background-color: blue;">8</div>
             <div class="one-third column vh_height30" style="background-color: red;">9</div>
         </div>
-    </div>
+    </div>-->
+    <section class="section">
+        <div class="container">
+            <!-- Creating a 3x3 grid -->
+            <div class="columns is-multiline is-gapless">
+                <!-- Row 1 -->
+                <div class="column is-4 grid-cell">1</div>
+                <div class="column is-4 grid-cell">2</div>
+                <div class="column is-4 grid-cell">3</div>
+
+                <!-- Row 2 -->
+                <div class="column is-4 grid-cell">4</div>
+                <div class="column is-4 grid-cell">5</div>
+                <div class="column is-4 grid-cell">6</div>
+
+                <!-- Row 3 -->
+                <div class="column is-4 grid-cell">7</div>
+                <div class="column is-4 grid-cell">8</div>
+                <div class="column is-4 grid-cell">9</div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

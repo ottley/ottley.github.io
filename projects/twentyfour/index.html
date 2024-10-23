@@ -27,6 +27,14 @@
             font-weight: bold;
             text-align: center;
         }
+
+        .grid-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Ensures image stays within square and covers it */
+            width: 100%; /* Ensures the image takes the full width of the cell */
+            height: 100%; /* Ensures the image takes the full height of the cell */
+        }
     </style>
 </head>
 
@@ -56,19 +64,37 @@
             <!-- Creating a 3x3 grid -->
             <div class="columns is-multiline is-gapless is-mobile is-marginless">
                 <!-- Row 1 -->
-                <div class="column is-4 grid-cell vh_height33" style="background-color: blue;"><img src="images/g1f.png"></div>
-                <div class="column is-4 grid-cell vh_height33" style="background-color: red;"><img src="images/g1f.png"></div>
-                <div class="column is-4 grid-cell vh_height33" style="background-color: green;"><img src="images/g1f.png"></div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: blue;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: red;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: green;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
 
                 <!-- Row 2 -->
-                <div class="column is-4 grid-cell vh_height33" style="background-color: red;"><img src="images/g1f.png"></div>
-                <div class="column is-4 grid-cell vh_height33" style="background-color: green;"><img src="images/g1f.png"></div>
-                <div class="column is-4 grid-cell vh_height33" style="background-color: blue;"><img src="images/g1f.png"></div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: red;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: green;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: blue;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
 
                 <!-- Row 3 -->
-                <div class="column is-4 grid-cell vh_height33" style="background-color: blue;"><img src="images/g1f.png"></div>
-                <div class="column is-4 grid-cell vh_height33" style="background-color: red;"><img src="images/g1f.png"></div>
-                <div class="column is-4 grid-cell vh_height33" style="background-color: green;"><img src="images/g1f.png"></div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: blue;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: red;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
+                <div class="column is-4 grid-cell vh_height33" style="background-color: green;">
+                    <img src="images/g1f.png" class="grid-image">
+                </div>
             </div>
 
         <!--</div>

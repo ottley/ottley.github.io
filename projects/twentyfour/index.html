@@ -28,13 +28,14 @@
             text-align: center;
         }
 
-        .grid-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover; /* Ensures image stays within square and covers it */
-            width: 100%; /* Ensures the image takes the full width of the cell */
-            height: 100%; /* Ensures the image takes the full height of the cell */
-        }
+        .image-container {
+      overflow: hidden;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
     </style>
 </head>
 
@@ -65,35 +66,71 @@
             <div class="columns is-multiline is-gapless is-mobile is-marginless">
                 <!-- Row 1 -->
                 <div class="column is-4 grid-cell vh_height33" style="background-color: blue;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
                 <div class="column is-4 grid-cell vh_height33" style="background-color: red;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
                 <div class="column is-4 grid-cell vh_height33" style="background-color: green;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
 
                 <!-- Row 2 -->
                 <div class="column is-4 grid-cell vh_height33" style="background-color: red;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
                 <div class="column is-4 grid-cell vh_height33" style="background-color: green;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
                 <div class="column is-4 grid-cell vh_height33" style="background-color: blue;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
 
                 <!-- Row 3 -->
                 <div class="column is-4 grid-cell vh_height33" style="background-color: blue;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
                 <div class="column is-4 grid-cell vh_height33" style="background-color: red;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
                 <div class="column is-4 grid-cell vh_height33" style="background-color: green;">
-                    <img src="images/g1f.png" class="grid-image">
+                    <div class="image-container">
+                        <figure class="image is-16by9">
+                          <img src="images/g1f.png">
+                        </figure>
+                      </div>
                 </div>
             </div>
 

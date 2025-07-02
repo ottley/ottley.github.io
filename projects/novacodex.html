@@ -67,60 +67,56 @@
             flex: 1;
             padding: 20px;
             border: 1px solid var(--secondary-color);
-            border-radius: 20px; /* More rounded */
+            border-radius: 20px;
             margin: 10px;
             min-width: 300px;
             box-sizing: border-box;
+            background: #fff;
         }
 
-        .input-section {
-            display: flex;
-            flex-direction: column;
+        .input-field {
+            resize: none;
+            width: 100%;
             height: 100%;
-        }
-
-        .top-half {
-            flex: 2;
-            padding-bottom: 20px;
-        }
-
-        .bottom-half {
-            flex: 3;
-            padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .bottom-half input, .bottom-half .number-string-container {
-            margin-bottom: 20px;
             padding: 10px;
             font-size: 16px;
             border: 1px solid var(--secondary-color);
             border-radius: 10px;
+            box-sizing: border-box;
+            background: #fff;
         }
 
-        .number-string-container {
+        .output-section {
             display: flex;
-            align-items: center;
-            padding: 0;
+            flex-direction: column;
+            background: #fff;
         }
-
-        .number-string-container input {
+        #output {
             flex: 1;
-            margin-bottom: 0;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            overflow-y: auto;
+            max-height: 200px;
+            min-height: 60px;
+            margin-bottom: 10px;
+            word-break: break-word;
         }
 
-        .copy-button, .clear-button {
+        .copy-button, .clear-button, .reset-button, .theme-toggle {
             margin-left: 0;
-            padding: 10px;
+            padding: 8px 18px;
             font-size: 16px;
             border: none;
-            border-radius: 999px; /* Fully rounded */
+            border-radius: 999px;
             background-color: var(--primary-color);
             color: var(--background-color);
             cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background 0.2s, color 0.2s;
+            width: auto;
+            min-width: unset;
+            max-width: 100%;
+            display: inline-block;
         }
 
         .copy-button {
@@ -130,48 +126,26 @@
         }
 
         .clear-button {
-            border-top-right-radius: 0;
+            border-top-right-radius: 999px;
             border-bottom-right-radius: 999px;
             border-left: 1px solid var(--background-color);
         }
 
         .reset-button {
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 999px; /* Fully rounded */
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            cursor: pointer;
+            border-radius: 999px;
         }
 
-        .title {
-            font-size: 48px;
-            font-weight: bold;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            animation: pulse 2s infinite;
-            margin-bottom: 20px;
+        .number-string-container input {
+            flex: 1;
+            margin-bottom: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        #input {
-            width: 100%;
-            height: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid var(--secondary-color);
-            border-radius: 10px;
+        .number-string-container {
+            display: flex;
+            align-items: center;
+            padding: 0;
         }
 
         @media (max-width: 900px) {
@@ -211,7 +185,7 @@
             }
             .copy-button, .clear-button, .reset-button, .theme-toggle {
                 font-size: 14px;
-                padding: 8px;
+                padding: 8px 14px;
             }
         }
     </style>
@@ -233,7 +207,7 @@
                     <div class="number-string-container">
                         <input type="text" id="number-string" placeholder="Enter number/string">
                         <button class="copy-button" onclick="copyToClipboard()">Copy</button>
-                        <button class="clear-button" onclick="clearNumberString()">&#128465;</button>
+                        <button class="clear-button" onclick="clearNumberString()">CLEAR</button>
                     </div>
                     <button class="reset-button" onclick="resetAllFields()">Reset</button>
                 </div>
@@ -325,7 +299,7 @@
             const numberString = document.getElementById('number-string');
             const clearButton = document.querySelector('.clear-button');
             numberString.value = '';
-            clearButton.style.background = 'red';
+            clearButton.style.background = '#d9534f';
             clearButton.style.color = 'white';
             setTimeout(() => {
                 clearButton.style.background = '';

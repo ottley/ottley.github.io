@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Code Lookup</title>
+    <style>
+        /* Define CSS variables for light and dark modes */
+        :root {
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #333;
+            --text-color: #f9f9f9;
+            --primary-color: #66d9ef;
+            --secondary-color: #272727;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .theme-toggle {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 999px; /* Fully rounded */
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .main-content {
+            display: flex;
+            width: 100%;
+            height: 60%;
+            flex-wrap: wrap;
+        }
+
+        .input-section, .output-section {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 20px; /* More rounded */
+            margin: 10px;
+            min-width: 300px;
+            box-sizing: border-box;
+        }
+
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .top-half {
+            flex: 2;
+            padding-bottom: 20px;
+        }
+
+        .bottom-half {
+            flex: 3;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bottom-half input, .bottom-half .number-string-container {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        .number-string-container {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .number-string-container input {
+            flex: 1;
+            margin-bottom: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .copy-button, .clear-button {
+            margin-left: 0;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 999px; /* Fully rounded */
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            cursor: pointer;
+        }
+
+        .copy-button {
+            border-top-right-radius: 999px;
+            border-bottom-right-radius: 999px;
+            border-left: 1px solid var(--background-color);
+        }
+
+        .clear-button {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 999px;
+            border-left: 1px solid var(--background-color);
+        }
+
+        .reset-button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 999px; /* Fully rounded */
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: pulse 2s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #input {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .main-content {
+                flex-direction: column;
+                height: auto;
+            }
+            .input-section, .output-section {
+                min-width: unset;
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 5px;
+            }
+            .main-content {
+                flex-direction: column;
+                height: auto;
+            }
+            .input-section, .output-section {
+                padding: 10px;
+                margin: 5px 0;
+                border-radius: 15px;
+            }
+            .title {
+                font-size: 32px;
+            }
+            .bottom-half input, .bottom-half .number-string-container {
+                font-size: 14px;
+                padding: 8px;
+            }
+            #input {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .copy-button, .clear-button, .reset-button, .theme-toggle {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="width: 100%; text-align: right; margin-bottom: 20px;">
+            <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
+        </div>
+        <div class="title">ADMIN BOY</div>
+        <div class="main-content">
+            <div class="input-section">
+                <div class="top-half">
+                    <textarea class="input-field" id="input" placeholder="Enter code(s) here..."></textarea>
+                </div>
+                <div class="bottom-half">
+                    <input type="text" id="date" placeholder="dd/mm/yy">
+                    <input type="text" id="name" placeholder="Enter name">
+                    <div class="number-string-container">
+                        <input type="text" id="number-string" placeholder="Enter number/string">
+                        <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+                        <button class="clear-button" onclick="clearNumberString()">&#128465;</button>
+                    </div>
+                    <button class="reset-button" onclick="resetAllFields()">Reset</button>
+                </div>
+            </div>
+            <div class="output-section">
+                <p id="output"></p>
+                <button class="copy-button" onclick="copyOutputToClipboard()">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle theme
+        function toggleTheme() {
+            const body = document.body;
+            const theme = body.getAttribute('data-theme');
+            if (theme === 'dark') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+        }
+
+        // Code mapping
+        const codeMap = {
+            '0219': 'Vomiting of pregnancy',
+            '0268': 'Other pregnancy related condition',
+            '0429': 'SROM',
+            'R104': 'Abdominal pain',
+            '0469': 'Antepartum haemorrhage',
+            '0321': 'Breech',
+            '0267': 'Cholestasis',
+            '0368': 'Diminished fetal movements',
+            '0470': 'Early labour <37 weeks',
+            '0471': 'Early labour >37 weeks',
+            '0369': 'Fetal problems',
+            '013X': 'Gestational hypertension',
+            '0234': 'Unspecified urinary infection',
+            'Z349': 'Supervision of Normal Pregnancy',
+            'O16X': 'Unspecified hypertension'
+        };
+
+        // Update output section in real-time
+        const inputField = document.getElementById('input');
+        const outputSection = document.getElementById('output');
+
+        inputField.addEventListener('input', () => {
+            const codes = inputField.value.replace(/[\s,]+/g, ',').split(',');
+            const output = codes.map(code => codeMap[code.trim()] || '').filter(Boolean).join(', ');
+            outputSection.innerText = output;
+        });
+
+        // Function to copy number string to clipboard
+        function copyToClipboard() {
+            const numberString = document.getElementById('number-string');
+            const copyButton = document.querySelector('.number-string-container .copy-button');
+            navigator.clipboard.writeText(numberString.value);
+            copyButton.style.background = 'green';
+            copyButton.textContent = 'Copied!';
+            setTimeout(() => {
+                copyButton.style.background = '';
+                copyButton.textContent = 'Copy';
+            }, 1000);
+        }
+
+        // Function to copy output to clipboard
+        function copyOutputToClipboard() {
+            const outputSection = document.getElementById('output');
+            const copyButton = document.querySelector('.output-section .copy-button');
+            navigator.clipboard.writeText(outputSection.innerText);
+            copyButton.style.background = 'green';
+            copyButton.textContent = 'Copied!';
+            setTimeout(() => {
+                copyButton.style.background = '';
+                copyButton.textContent = 'Copy';
+            }, 1000);
+        }
+
+        // Function to clear number string
+        function clearNumberString() {
+            const numberString = document.getElementById('number-string');
+            const clearButton = document.querySelector('.clear-button');
+            numberString.value = '';
+            clearButton.style.background = 'red';
+            clearButton.style.color = 'white';
+            setTimeout(() => {
+                clearButton.style.background = '';
+                clearButton.style.color = '';
+            }, 500);
+        }
+
+        // Function to reset all fields
+        function resetAllFields() {
+            const inputField = document.getElementById('input');
+            const dateField = document.getElementById('date');
+            const nameField = document.getElementById('name');
+            const numberStringField = document.getElementById('number-string');
+            const outputSection = document.getElementById('output');
+
+            inputField.value = '';
+            dateField.value = '';
+            nameField.value = '';
+            numberStringField.value = '';
+            outputSection.innerText = '';
+        }
+    </script>
+</body>
+</html>

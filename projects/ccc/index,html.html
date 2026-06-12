@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Coast Craft Club</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box !important; }
+        body { background: #fdf3ea; margin: 0; }
+        
+        #header { padding: 0 !important; margin: 0 !important; }
+        #header .inner { padding: 0.2rem 0 0 !important; }
+        #header img { width: 32%; max-width: 240px; margin: 3px 0; animation: wobble 3.8s ease-in-out infinite; }
+        @keyframes wobble { 0%{transform:rotate(-1deg)} 50%{transform:rotate(1deg)} 100%{transform:rotate(-1deg)} }
+
+        .tiles article.style1 > .image:before { background: #ff8f0c !important; }
+        .tiles article.style2 > .image:before { background: #5170ff !important; }
+        .tiles article.style3 > .image:before { background: #f26d34 !important; }
+        .tiles article.style4 > .image:before { background: #91b89c !important; }
+        .tiles article.style5 > .image:before { background: #fac234 !important; }
+        .tiles article.style6 > .image:before { background: #94a7e4 !important; }
+
+        .tiles article.style1 > .image:before,
+        .tiles article.style2 > .image:before { opacity: 0.55 !important; transition: opacity 0.2s; }
+        .tiles article.style1:hover > .image:before,
+        .tiles article.style2:hover > .image:before { opacity: 0.15 !important; }
+
+        .tiles { 
+            margin: -0.4em 0 0 -0.4em !important; 
+            display: flex !important; 
+            flex-wrap: wrap !important;
+            padding: 0 0.4em 1em;
+        }
+        .tiles article {
+            margin: 0.4em 0 0 0.4em !important;
+            width: calc(50% - 0.4em) !important;
+            min-height: 6.5em !important;
+            height: 6.5em !important;
+            overflow: hidden;
+        }
+        .tiles article, .tiles article > .image { transition: none !important; transform: none !important; }
+        .tiles article:hover { transform: none !important; }
+        .tiles article:hover > .image { transform: none !important; }
+
+        .tiles article h2 { 
+            font-size: 0.9rem !important; 
+            text-transform: none !important;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.1;
+        }
+        .tiles article .content { 
+            height: 50% !important;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            padding: 0 !important;
+        }
+        .tiles article .icon { font-size: 1.3em !important; }
+
+        @media (max-width: 600px) {
+            .tiles article { 
+                width: calc(100% - 0.4em) !important; 
+                min-height: 5.5em !important;
+                height: 5.5em !important;
+            }
+            #header img { width: 45%; }
+        }
+
+        .tiles article.style3 h2, 
+        .tiles article.style3 .icon { color: #ffffff !important; }
+
+        #main { padding-bottom: 0 !important; }
+        #main > .inner { padding: 0 0.5em !important; }
+
+        #footer { background: #fdf3ea !important; padding: 0.25rem 0 !important; margin: 0 !important; }
+        #footer ul { margin: 0; padding: 0; text-align: center; list-style: none; }
+        #footer li {
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: #5a4a3a;
+            letter-spacing: 1.5px;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <div class="inner">
+                <center><img src="images/ccclogo2.jpg" alt="Coast Craft Club"></center>
+            </div>
+        </header>
+
+        <div id="main">
+            <div class="inner">
+                <section class="tiles">
+                    <article class="style1" style="padding-bottom: 300;">
+                        <span class="image"  style="padding-bottom: 300;"><img src="images/workshop-front.jpg" alt=""  style="padding-bottom: 300;"></span>
+                        <a href="#!" class="open-fs" data-img="images/workshop-front.jpg"  style="padding: 300;">
+                            <div class="content"  style="padding-bottom: 300;"><span class="icon solid fa-expand" style="color:white"  style="padding-bottom: 300;"></span></div>
+                        </a>
+                    </article>
+
+                    <article class="style2">
+                        <span class="image"  style="padding-bottom: 300;"><img src="images/workshop-details.jpg" alt=""></span>
+                        <a href="#!" class="open-fs" data-img="images/workshop-details.jpg">
+                            <div class="content"><span class="icon solid fa-expand" style="color:white"></span></div>
+                        </a>
+                    </article>
+
+                    <article class="style3">
+                        <span class="image"><img src="images/pic03.jpg" alt=""></span>
+                        <a href="#!" class="open-bm">
+                            <h2>Bookings</h2>
+                            <div class="content"><span class="icon solid fa-ticket-alt"></span></div>
+                        </a>
+                    </article>
+
+                    <article class="style4">
+                        <span class="image"><img src="images/pic10.jpg" alt=""></span>
+                        <a href="https://instagram.com/coast.craft.club" target="_blank">
+                            <h2>Instagram</h2>
+                            <div class="content"><span class="icon brands fa-instagram"></span></div>
+                        </a>
+                    </article>
+
+                    <article class="style5">
+                        <span class="image"><img src="images/pic12.jpg" alt=""></span>
+                        <a href="#!" class="open-mm">
+                            <h2>Mail</h2>
+                            <div class="content"><span class="icon solid fa-envelope"></span></div>
+                        </a>
+                    </article>
+
+                    <article class="style6">
+                        <span class="image"><img src="images/pic11.jpg" alt=""></span>
+                        <a href="https://www.facebook.com/share/1Bbd7Xd627/" target="_blank">
+                            <h2>Facebook</h2>
+                            <div class="content"><span class="icon brands fa-facebook-f"></span></div>
+                        </a>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="inner">
+                <ul><li>© Coast Craft Club - 2026</li></ul>
+            </div>
+        </footer>
+    </div>
+
+    <div id="fs" class="modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:10000;align-items:center;justify-content:center">
+        <span class="close" style="position:absolute;top:10px;right:18px;color:#fff;font-size:2rem;cursor:pointer;z-index:10001">×</span>
+        <img id="fsi" src="" style="max-width:92%;max-height:92%;object-fit:contain">
+    </div>
+
+    <div id="bm" class="modal" style="display:none;position:fixed;inset:0;background:rgba(253,243,234,0.97);z-index:10000;align-items:center;justify-content:center">
+        <span class="close" style="position:absolute;top:10px;right:18px;color:#5a4a3a;font-size:2rem;cursor:pointer;z-index:10001">×</span>
+        <div style="text-align:center;padding:2rem">
+            <img src="images/eblogo.png" alt="" style="width:80px;height:auto;margin-bottom:0.8rem">
+            <p style="font-family:'Amatic SC',cursive;font-weight:700;font-size:1.9rem;color:#f26d34;margin:0;letter-spacing:1.2px">Eventbrite bookings coming soon</p>
+        </div>
+    </div>
+
+    <div id="mm" class="modal" style="display:none;position:fixed;inset:0;background:rgba(253,243,234,0.97);z-index:10000;align-items:center;justify-content:center">
+        <span class="close" style="position:absolute;top:10px;right:18px;color:#5a4a3a;font-size:2rem;cursor:pointer;z-index:10001">×</span>
+        <div style="text-align:center;cursor:pointer;padding:2rem" onclick="copyMail()">
+            <span class="icon solid fa-envelope" style="font-size:2.5rem;color:#fac234;display:block;margin-bottom:0.5rem"></span>
+            <p style="font-family:'Amatic SC',cursive;font-weight:700;font-size:2rem;color:#5a4a3a;margin:0;letter-spacing:1.5px">coastcraftclub@outlook.com</p>
+            <p id="ct" style="font-family:'Amatic SC',cursive;font-weight:700;font-size:1.2rem;color:#5a4a3a;margin:0.3rem 0 0;opacity:0.8">Tap to copy</p>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        function copyMail() {
+            navigator.clipboard.writeText('coastcraftclub@outlook.com').then(() => {
+                document.getElementById('ct').textContent = 'Copied!';
+                setTimeout(() => document.getElementById('ct').textContent = 'Tap to copy', 1500);
+            });
+        }
+
+        document.querySelectorAll('.open-fs').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.getElementById('fsi').src = a.dataset.img;
+                document.getElementById('fs').style.display = 'flex';
+            });
+        });
+        document.querySelectorAll('.open-bm').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.getElementById('bm').style.display = 'flex';
+            });
+        });
+        document.querySelectorAll('.open-mm').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.getElementById('mm').style.display = 'flex';
+            });
+        });
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', e => {
+                if (e.target === modal) modal.style.display = 'none';
+            });
+            modal.querySelector('.close').addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+            }
+        });
+    </script>
+</body>
+</html>
